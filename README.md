@@ -1,4 +1,5 @@
 # Link Analytics Dashboard
+![image](https://github.com/user-attachments/assets/750f5f0b-541f-4742-870b-cdaf8d51a877)
 
 A full-stack URL shortener with comprehensive analytics dashboard, similar to Bitly. Users can create shortened links and track their performance including clicks, geographic locations, device types, browsers, and operating systems.
 
