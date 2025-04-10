@@ -95,7 +95,7 @@ const Navbar = ({ setSidebarOpen }) => {
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link to="/dashboard" className="cursor-pointer">
+                      <Link to="/" className="cursor-pointer">
                         <LineChart className="mr-2 h-4 w-4" />
                         <span>Dashboard</span>
                       </Link>
@@ -107,9 +107,9 @@ const Navbar = ({ setSidebarOpen }) => {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link to="/settings" className="cursor-pointer">
+                      <Link to="/profile" className="cursor-pointer">
                         <Settings className="mr-2 h-4 w-4" />
-                        <span>Settings</span>
+                        <span>Account Settings</span>
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
