@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://your-netlify-app-name.netlify.app'],
+  origin: ['http://localhost:3000', 'https://https://advanced-url-shortner.netlify.app'],
   credentials: true
 }));
 app.use(express.json());
