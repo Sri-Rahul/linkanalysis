@@ -1,0 +1,44 @@
+{
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.5"
+  },
+  "name": "linkanalysis",
+  "version": "1.0.0",
+  "description": "A full-stack URL shortener with analytics dashboard, similar to Bitly. Users can create shortened links and track their performance including clicks, locations, and devices.",
+  "main": "index.js",
+  "dependencies": {
+    "browserslist": "^4.24.4",
+    "caniuse-lite": "^1.0.30001713",
+    "convert-source-map": "^2.0.0",
+    "debug": "^4.4.0",
+    "electron-to-chromium": "^1.5.135",
+    "esbuild": "^0.25.2",
+    "escalade": "^3.2.0",
+    "gensync": "^1.0.0-beta.2",
+    "globals": "^11.12.0",
+    "js-tokens": "^4.0.0",
+    "jsesc": "^3.1.0",
+    "json5": "^2.2.3",
+    "lru-cache": "^5.1.1",
+    "ms": "^2.1.3",
+    "nanoid": "^3.3.11",
+    "node-releases": "^2.0.19",
+    "picocolors": "^1.1.1",
+    "postcss": "^8.5.3",
+    "react-refresh": "^0.14.2",
+    "rollup": "^4.39.0",
+    "semver": "^6.3.1",
+    "source-map-js": "^1.2.1",
+    "update-browserslist-db": "^1.1.3",
+    "yallist": "^3.1.1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
