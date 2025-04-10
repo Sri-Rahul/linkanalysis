@@ -10,13 +10,18 @@ const Analytics = require('../models/Analytics');
  */
 const redirectToUrl = asyncHandler(async (req, res) => {
   const { code } = req.params;
+  console.log(`Redirect attempt for code: ${code}`);
 
   // Find the URL by short code
   const url = await Url.findOne({ shortCode: code });
-
+  
   if (!url) {
-    res.status(404);
-    throw new Error('URL not found');
+    // Instead of throwing an error, render a nice 404 page or redirect to frontend
+    if (process.env.NODE_ENV === 'production') {
+      return res.redirect(`${process.env.BASE_URL}/not-found?code=${code}`);
+    }
+    res.status(404).json({ error: 'URL not found' });
+    return;
   }
 
   // Check if URL is active and not expired
