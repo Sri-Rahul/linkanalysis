@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://https://advanced-url-shortner.netlify.app'],
+  origin: ['http://localhost:3000', 'https://advanced-url-shortner.netlify.app', '*'],
   credentials: true
 }));
 app.use(express.json());
@@ -49,15 +49,21 @@ app.use('/api/auth', authRoutes);
 app.use('/api/urls', urlRoutes);
 app.use('/api/analytics', analyticsRoutes);
 
+// Add health check here
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', message: 'API is running' });
+});
+
 // Root route handler
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Link Analysis API' });
 });
 
+// IMPORTANT: Move the redirect route AFTER the API routes
 // Redirect route for shortened URLs
 app.get('/:code', require('./controllers/redirectController'));
 
-// Serve static assets in production
+// Serve static assets in production AFTER API routes
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
   
@@ -66,6 +72,11 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
   });
 }
+
+// Add this before the error handling middleware
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', message: 'API is running' });
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
