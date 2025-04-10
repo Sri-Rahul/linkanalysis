@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Create a custom axios instance with the API URL
+// Create a custom axios instance with the API URL using relative path
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  baseURL: '/api'
 });
 
 // Add a request interceptor to add the auth token to requests
